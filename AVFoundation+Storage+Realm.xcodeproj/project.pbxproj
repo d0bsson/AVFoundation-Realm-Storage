@@ -13,6 +13,7 @@
 		D75E92D42B628C350078CD9E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D75E92D32B628C350078CD9E /* Assets.xcassets */; };
 		D75E92D72B628C350078CD9E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D75E92D52B628C350078CD9E /* LaunchScreen.storyboard */; };
 		D75E92DF2B62DF5E0078CD9E /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D75E92DE2B62DF5E0078CD9E /* CameraViewController.swift */; };
+		D75E92E22B6688010078CD9E /* PostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D75E92E12B6688010078CD9E /* PostViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		D75E92D62B628C350078CD9E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D75E92D82B628C350078CD9E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D75E92DE2B62DF5E0078CD9E /* CameraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
+		D75E92E12B6688010078CD9E /* PostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +73,7 @@
 			children = (
 				D75E92CE2B628C340078CD9E /* MainViewController.swift */,
 				D75E92DE2B62DF5E0078CD9E /* CameraViewController.swift */,
+				D75E92E12B6688010078CD9E /* PostViewController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -149,6 +152,7 @@
 				D75E92DF2B62DF5E0078CD9E /* CameraViewController.swift in Sources */,
 				D75E92CB2B628C340078CD9E /* AppDelegate.swift in Sources */,
 				D75E92CD2B628C340078CD9E /* SceneDelegate.swift in Sources */,
+				D75E92E22B6688010078CD9E /* PostViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

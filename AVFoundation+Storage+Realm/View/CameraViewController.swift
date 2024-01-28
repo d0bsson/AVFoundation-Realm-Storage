@@ -33,7 +33,8 @@ class CameraViewController: UIViewController {
     }(UIButton(primaryAction: takePhoto))
     
     lazy var takePhoto = UIAction { _ in
-        self.output.capturePhoto(with: AVCapturePhotoSettings(), delegate: self)
+        let settings = AVCapturePhotoSettings()
+        self.output.capturePhoto(with: settings, delegate: self)
     }
     
     override func viewDidLoad() {
@@ -101,13 +102,16 @@ extension CameraViewController: AVCapturePhotoCaptureDelegate {
     
     func photoOutput(_ output: AVCapturePhotoOutput, didFinishProcessingPhoto photo: AVCapturePhoto, error: Error?) {
        
-//        guard let data = photo.fileDataRepresentation() else {
-//            return
-//        }
-//        
+        guard let data = photo.fileDataRepresentation() else {
+            return
+        }
+        
+        let postVC = PostViewController()
+        postVC.photo.image = UIImage(data: data)
+        postVC.modalPresentationStyle = .overFullScreen
+        self.present(postVC, animated: true)
+        
 //        if let image = UIImage(data: data){
-//            self.imageView.image = image
-//            
 //            UIImageWriteToSavedPhotosAlbum(image, nil, nil, nil)
 //        }
     }
