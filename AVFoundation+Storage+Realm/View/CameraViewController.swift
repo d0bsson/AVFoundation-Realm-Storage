@@ -12,6 +12,8 @@ class CameraViewController: UIViewController {
     let output = AVCapturePhotoOutput()
     var previewLayer = AVCaptureVideoPreviewLayer()
     
+    private let realmManager = RealmManager()
+    
     //MARK: - Buttons
     lazy var dissmisBtn: UIButton = {
         $0.translatesAutoresizingMaskIntoConstraints = false
@@ -63,7 +65,7 @@ class CameraViewController: UIViewController {
             shotBtn.widthAnchor.constraint(equalToConstant: 100)
         ])
     }
-
+    
     private func setUpCamera(){
         session = AVCaptureSession()
         
@@ -76,7 +78,7 @@ class CameraViewController: UIViewController {
             
             if session.canAddInput(input),
                session.canAddOutput(output){
-
+                
                 session.addInput(input)
                 session.addOutput(output)
             }
@@ -95,24 +97,23 @@ class CameraViewController: UIViewController {
             print("Error?")
         }
     }
-
 }
 
 extension CameraViewController: AVCapturePhotoCaptureDelegate {
     
     func photoOutput(_ output: AVCapturePhotoOutput, didFinishProcessingPhoto photo: AVCapturePhoto, error: Error?) {
        
-        guard let data = photo.fileDataRepresentation() else {
-            return
-        }
-        
+        guard let data = photo.fileDataRepresentation() else { return }
+
+        //Переход на следующий экран
         let postVC = PostViewController()
         postVC.photo.image = UIImage(data: data)
         postVC.modalPresentationStyle = .overFullScreen
         self.present(postVC, animated: true)
         
-//        if let image = UIImage(data: data){
-//            UIImageWriteToSavedPhotosAlbum(image, nil, nil, nil)
-//        }
+        //Сохранение в галерею телефона и storage
+        if let image = UIImage(data: data){
+            UIImageWriteToSavedPhotosAlbum(image, nil, nil, nil)
+        }
     }
 }

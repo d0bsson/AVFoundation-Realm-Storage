@@ -8,10 +8,12 @@
 import UIKit
 
 class PostViewController: UIViewController {
+    private let realmManager = RealmManager()
+    private let storageManager = StorageManager()
     
     lazy var photo: UIImageView = {
         $0.translatesAutoresizingMaskIntoConstraints = false
-//        $0.contentMode = .scaleToFill
+        $0.contentMode = .scaleToFill
         $0.clipsToBounds = true
         $0.layer.cornerRadius = 15
         $0.layer.borderWidth = 3
@@ -43,6 +45,7 @@ class PostViewController: UIViewController {
     
     lazy var discriptionTextField: UITextField = {
         $0.translatesAutoresizingMaskIntoConstraints = false
+        $0.delegate = self
         $0.placeholder = " Описание"
         $0.layer.cornerRadius = 10
         $0.borderStyle = .line
@@ -61,7 +64,16 @@ class PostViewController: UIViewController {
         $0.tintColor = .white
         
         return $0
-    }(UIButton())
+    }(UIButton(primaryAction: saveAction))
+    
+    lazy var saveAction = UIAction { [self] _ in
+        let imageName = UUID().uuidString + ".jpg"
+        realmManager.writetoRealm(imageName: imageName,
+                                  textHeader: headerTextField.text ?? "",
+                                  textDiscription: discriptionTextField.text ?? "")
+        guard let imageData = photo.image?.jpegData(compressionQuality: 0.5) else { return }
+        storageManager.savePost(imageName: imageName, imageData: imageData)
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -101,5 +113,11 @@ class PostViewController: UIViewController {
             saveBtn.heightAnchor.constraint(equalToConstant: 50)
         ])
     }
+}
 
+extension PostViewController: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        view.endEditing(true)
+        return true
+    }
 }
