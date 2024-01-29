@@ -10,7 +10,7 @@ import RealmSwift
 
 class Post: Object {
     @Persisted(primaryKey: true) var id: String = UUID().uuidString
-    @Persisted var image: String = ""
+    @Persisted var imageName: String = ""
     @Persisted var discriptio: String = ""
     @Persisted var header: String = ""
 }

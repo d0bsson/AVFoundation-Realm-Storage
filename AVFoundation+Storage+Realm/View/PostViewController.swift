@@ -13,7 +13,7 @@ class PostViewController: UIViewController {
     
     lazy var photo: UIImageView = {
         $0.translatesAutoresizingMaskIntoConstraints = false
-        $0.contentMode = .scaleToFill
+        $0.contentMode = .scaleAspectFill
         $0.clipsToBounds = true
         $0.layer.cornerRadius = 15
         $0.layer.borderWidth = 3
@@ -73,6 +73,8 @@ class PostViewController: UIViewController {
                                   textDiscription: discriptionTextField.text ?? "")
         guard let imageData = photo.image?.jpegData(compressionQuality: 0.5) else { return }
         storageManager.savePost(imageName: imageName, imageData: imageData)
+//        navigationController?.popToRootViewController(animated: true)
+        view.window?.rootViewController?.dismiss(animated: true, completion: nil)
     }
 
     override func viewDidLoad() {

@@ -23,4 +23,12 @@ class StorageManager {
             print("\(error) - ошибка при записи в файловый менеджер")
         }
     }
+    
+    func loadPost(imageName: String) -> Data {
+        var path = fileManagerPath()
+        path.append(path: imageName)
+        
+        guard let imageData = try? Data(contentsOf: path) else { return Data() }
+        return imageData
+    }
 }

@@ -21,7 +21,7 @@ class RealmManager {
         let post = Post()
         post.discriptio = textDiscription
         post.header = textHeader
-        post.image = imageName
+        post.imageName = imageName
         
         do {
             try realm.write({

@@ -12,6 +12,7 @@
 		D71D657F2B66E8CA00758072 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = D71D657E2B66E8CA00758072 /* Post.swift */; };
 		D71D65822B66E9F000758072 /* RealmManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D71D65812B66E9F000758072 /* RealmManager.swift */; };
 		D71D65842B66F38100758072 /* StorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D71D65832B66F38100758072 /* StorageManager.swift */; };
+		D71D65862B679DE900758072 /* PostCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D71D65852B679DE900758072 /* PostCell.swift */; };
 		D75E92CB2B628C340078CD9E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D75E92CA2B628C340078CD9E /* AppDelegate.swift */; };
 		D75E92CD2B628C340078CD9E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D75E92CC2B628C340078CD9E /* SceneDelegate.swift */; };
 		D75E92CF2B628C340078CD9E /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D75E92CE2B628C340078CD9E /* MainViewController.swift */; };
@@ -25,6 +26,7 @@
 		D71D657E2B66E8CA00758072 /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		D71D65812B66E9F000758072 /* RealmManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmManager.swift; sourceTree = "<group>"; };
 		D71D65832B66F38100758072 /* StorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageManager.swift; sourceTree = "<group>"; };
+		D71D65852B679DE900758072 /* PostCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostCell.swift; sourceTree = "<group>"; };
 		D75E92C72B628C340078CD9E /* AVFoundation+Storage+Realm.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "AVFoundation+Storage+Realm.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D75E92CA2B628C340078CD9E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D75E92CC2B628C340078CD9E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -103,10 +105,10 @@
 		D75E92C92B628C340078CD9E /* AVFoundation+Storage+Realm */ = {
 			isa = PBXGroup;
 			children = (
+				D75E92E02B62F5890078CD9E /* View */,
 				D71D65802B66E9E400758072 /* Managers */,
 				D71D65782B66E75900758072 /* Post */,
 				D71D65762B66E73200758072 /* Delegates */,
-				D75E92E02B62F5890078CD9E /* View */,
 				D71D65772B66E74100758072 /* Other */,
 				D75E92D82B628C350078CD9E /* Info.plist */,
 			);
@@ -119,6 +121,7 @@
 				D75E92CE2B628C340078CD9E /* MainViewController.swift */,
 				D75E92DE2B62DF5E0078CD9E /* CameraViewController.swift */,
 				D75E92E12B6688010078CD9E /* PostViewController.swift */,
+				D71D65852B679DE900758072 /* PostCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -201,6 +204,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D75E92CF2B628C340078CD9E /* MainViewController.swift in Sources */,
+				D71D65862B679DE900758072 /* PostCell.swift in Sources */,
 				D75E92DF2B62DF5E0078CD9E /* CameraViewController.swift in Sources */,
 				D75E92CB2B628C340078CD9E /* AppDelegate.swift in Sources */,
 				D71D657F2B66E8CA00758072 /* Post.swift in Sources */,
